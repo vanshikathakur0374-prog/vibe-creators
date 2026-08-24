@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe Creators</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary-bg: #eddcc8;
+      --secondary-bg: #ffffff;
+      --text-color: #333333;
+      --accent-color: #bfa180;
+      --font-serif: 'Playfair Display', serif;
+      --font-sans: 'Lato', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--text-color);
+      background-color: var(--primary-bg);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    h1, h2, h3 {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    p { font-size:1rem; text-align:center; max-width:800px; margin:0 auto 2rem; }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #eddcc8;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      animation: slideDown 0.6s ease;
+    }
+
+    .navbar-links { list-style: none; display: flex; margin: 0; padding: 0; }
+    .navbar-links li { margin: 0 1rem; }
+    .navbar-links a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 600;
+      font-size: 1.1rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .navbar-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s ease;
+    }
+    .navbar-links a:hover {
+      color: var(--accent-color);
+    }
+    .navbar-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero */
+    .hero {
+      height: 85vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                  url('https://png.pngtree.com/thumb_back/fw800/background/20240704/pngtree-new-event-management-outdoor-background-image_15957681.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 2s ease-in;
+    }
+    .hero h1 {
+      font-size: 4.5rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+      animation: slideUp 1.5s ease;
+    }
+    .hero p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      animation: fadeIn 2.5s ease;
+    }
+
+    /* Core Message */
+    .core-message {
+      padding: 5rem 0;
+      background-color: var(--secondary-bg);
+      animation: fadeUp 1.5s ease;
+    }
+
+    .core-message p {
+      font-size: 1.25rem;
+      font-style: italic;
+      color: #555;
+    }
+
+    .core-message span {
+      display: block;
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--accent-color);
+      text-transform: uppercase;
+    }
+
+    /* Gallery */
+    .event-images {
+      padding: 6rem 0;
+      text-align: center;
+      background-color: var(--primary-bg);
+      animation: fadeUp 1.5s ease;
+    }
+
+    .event-images h2 {
+      margin-bottom: 2rem;
+      font-size: 3rem;
+      color: black;
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 5rem 0;
+      text-align: center;
+      background-color: var(--secondary-bg);
+      animation: fadeUp 1.5s ease;
+    }
+
+    .cta-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background-color: var(--accent-color);
+      color: var(--secondary-bg);
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .cta-button:hover {
+      background-color: #a3896b;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Responsive */
+    @media(max-width:768px) {
+      .hero h1 { font-size: 3rem; }
+      .hero p { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul class="navbar-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="event.html">Event</a></li>
+      
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>Vibe Creators</h1>
+    <p>"Crafting Moments, Creating Memories."</p>
+  </header>
+
+  <!-- Core Message -->
+  <section class="core-message">
+    <div class="container">
+      <h2>Your Vision, Our Expertise</h2>
+      <p>At Vibe Creators, we believe every event should be a masterpiece. We meticulously plan and flawlessly execute every detail, ensuring your occasion is truly unforgettable and reflects your unique style and vision.</p>
+      <center><span>With over 20+ years of experience in creating unforgettable events.</span></center>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="event-images">
+    <div class="container">
+      <h2>Our Gallery</h2>
+      <div class="image-gallery">
+        <img src="https://i.pinimg.com/originals/80/e1/12/80e112ea4d17ce6cea3ae600c8f2750e.jpg" alt="Elegant wedding" />
+        <img src="https://tse2.mm.bing.net/th/id/OIP.9RHZofS1QsDgO4GYkEZNDgHaE8?cb=12&w=1024&h=683&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Corporate event" />
+        <img src="https://i.pinimg.com/originals/fe/4a/64/fe4a64b51b6c6a42c1a9067586c3e443.jpg" alt="Outdoor party" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Ready to plan your next event?</h2>
+    <p>Let's turn your ideas into a memorable reality. Our team is ready to listen and help you create the perfect experience.</p>
+    <a href="contact-us.html" class="cta-button">Let's Talk - Send a Message...</a>
+  </section>
+
+</body>
+</html>
