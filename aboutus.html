@@ -1,0 +1,334 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Organizer | About Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutus.html" class="active">About US</a></li>
+      <li><a href="event.html">Event</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact-us.html">Contact Us</a></li>
+      
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="page-header fade-in">
+    <h1>About Us</h1>
+    <p>We create unforgettable memories through world-class event planning.</p>
+  </header>
+
+  <!-- About Section -->
+  <section class="about-section fade-in">
+    <p>
+      We are one of the leading Event Management & Wedding Planning companies in India. 
+      At <strong>Vibe Creators</strong> we celebrate your love, success, health, and wellbeing 
+      by organizing powerful and unforgettable celebrations. Let us make your D-day 
+      the best memory of your life!
+    </p>
+
+    <div class="gallery">
+      <img src="https://i.pinimg.com/1200x/48/9a/09/489a09033656a54b0a90c7d64abf22fb.jpg" alt="Event 1">
+      <img src="https://i.pinimg.com/736x/37/c6/25/37c625c8a1a09d739e4c3288ed54341a.jpg" alt="Event 2">
+      <img src="https://i.pinimg.com/1200x/d6/ac/b8/d6acb8a0a4c175fb17638248e74bc2e5.jpg" alt="Event 3">
+      <img src="https://i.pinimg.com/1200x/f1/1a/76/f11a7623f97d7748e47da44483a0dd00.jpg" alt="Event 4">
+      <img src="https://i.pinimg.com/736x/b9/75/bf/b975bf4225f8f75a31ebf957cf16f58c.jpg" alt="Event 5">
+    </div>
+  </section>
+
+  <!-- Vision Section -->
+  <section class="vision-section slide-in-left">
+    <div class="vision-text">
+      <h1>Driven By A Good Vision</h1>
+      <p>
+        Our vision is to establish ourselves as the foremost event management company in India, 
+        dedicated to crafting experiences that etch cherished memories into your life’s story. 
+        We aspire to create impactful, transformational events that go beyond success — 
+        turning them into lasting value and lifelong memories.
+      </p>
+    </div>
+    <div class="vision-image">
+      <img src="https://i.pinimg.com/1200x/ef/9a/8d/ef9a8d5b2f09f4461a04a38138c42840.jpg" alt="Vision Image">
+    </div>
+  </section>
+
+  <!-- What We Do Section -->
+  <section class="what-we-do slide-in-right">
+    <div class="image-container">
+      <img src="https://i.pinimg.com/736x/fc/3b/5f/fc3b5f06ba0584ef30cdc240cf37d58d.jpg" alt="Event Hall">
+    </div>
+    <div class="text-container">
+      <h1>What We Do?</h1>
+      <p>
+        We specialize in creating award-winning events. As one of the top event planning 
+        companies in the country, we offer comprehensive planning, 24/7 assistance, and 
+        custom-tailored solutions for every occasion. Our mission: transform your dream 
+        into a breathtaking reality.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <center><p>© 2025 Vibe Creators| Designed with ❤ for your celebrations</p></center>
+  </footer>
+
+</body>
+</html>
+<!-- <style> 
+ /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background: #eddcc8;
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: #bfa180;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #eddcc8;
+  transition: 0.3s;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 100%;
+}
+
+/* Header */
+.page-header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #e66e05ef,  #ecb604bd);
+  color: white;
+  border-radius: 0 0 40px 40px;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* About Section */
+.about-section {
+  text-align: center;
+  padding: 2rem 1rem;
+  animation: fadeIn 1.5s ease;
+}
+
+.about-section p {
+  max-width: 800px;
+  margin: auto;
+  color: #444;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 2rem;
+}
+
+.gallery img {
+  width: 230px;
+  height: 230px;
+  border-radius: 15px;
+  object-fit: cover;
+  transition: transform 0.5s, box-shadow 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Vision Section */
+.vision-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 3rem 1rem;
+  background: #fdf1f5;
+}
+
+.vision-text {
+  flex: 1;
+  padding: 1rem 2rem;
+}
+
+.vision-text h2 {
+  color: #ff4081;
+  margin-bottom: 1rem;
+}
+
+.vision-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  animation: zoomIn 1.5s ease;
+}
+
+/* What We Do Section */
+.what-we-do {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  padding: 3rem 1rem;
+  background: #fff;
+}
+
+.what-we-do .image-container img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  transition: transform 0.4s;
+}
+
+.what-we-do .image-container img:hover {
+  transform: scale(1.05);
+}
+
+.text-container {
+  flex: 1;
+  padding: 2rem;
+}
+
+.text-container h2 {
+  color: #ff4081;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background: #222;
+  color: white;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.9); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.slide-in-left {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.slide-in-right {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vision-section, .what-we-do {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+h1{
+    color: #514c03;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 3.7rem;
+  }
+#footer p{
+  text-decoration: line-through;
+    color: white;
+    font-size: 1.2rem;
+  }
+  .container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000;
+  padding: 15px 0;
+}
+
+
+</style> -->
