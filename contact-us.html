@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * { 
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(to bottom,#ededec, #f0e1cf);
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: var(--primary-bg);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      background-color: #eddcc8;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 9px;
+        }
+        
+        .navbar ul li a {
+            text-decoration: none;
+            color:var(--text-color);
+            font-weight: 490;
+            font-size: 1.1rem;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            padding: 4px 12px;
+            position: sticky;
+        }
+
+        .navbar ul li a:hover {
+            color: #bfa180;
+            border-bottom: 2px solid #eddcc8;
+           
+        }
+
+        /* Push content below navbar */
+        .main-content {
+            padding-top: 60px; /* height of navbar + some spacing */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        /* Bubbles */
+        .bubbles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .bubbles span {
+            position: absolute;
+            bottom: -150px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #eccba6, transparent);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 60px #eddcc8;
+            animation: floatUp 5s infinite ease-in-out;
+            opacity: 0.9;
+            filter: blur(0.5px);
+        }
+
+        .bubbles span:nth-child(1) { width: 20px; height: 20px; left: 5%; animation-delay: 0s; animation-duration: 8s; }
+        .bubbles span:nth-child(2) { width: 80px; height: 80px; left: 15%; animation-delay: 4s; animation-duration: 16s; }
+        .bubbles span:nth-child(3) { width: 40px; height: 40px; left: 25%; animation-delay: 6s; animation-duration: 12s; }
+        .bubbles span:nth-child(4) { width: 60px; height: 60px; left: 35%; animation-delay: 2s; animation-duration: 14s; }
+        .bubbles span:nth-child(5) { width: 100px; height: 100px; left: 45%; animation-delay: 5s; animation-duration: 16s; }
+        .bubbles span:nth-child(6) { width: 25px; height: 25px; left: 55%; animation-delay: 6s; animation-duration: 10s; }
+        .bubbles span:nth-child(7) { width: 70px; height: 70px; left: 65%; animation-delay: 1s; animation-duration: 14s; }
+        .bubbles span:nth-child(8) { width: 30px; height: 30px; left: 75%; animation-delay: 4s; animation-duration: 10s; }
+        .bubbles span:nth-child(9) { width: 90px; height: 90px; left: 85%; animation-delay: 0s; animation-duration: 16s; }
+        .bubbles span:nth-child(10) { width: 50px; height: 50px; left: 95%; animation-delay: 5s; animation-duration: 13s; }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
+            25% { transform: translateY(-25vh) translateX(10px) scale(1.1); opacity: 1; }
+            50% { transform: translateY(-50vh) translateX(-15px) scale(0.9); opacity: 0.8; }
+            75% { transform: translateY(-75vh) translateX(15px) scale(1.2); opacity: 0.7; }
+            100% { transform: translateY(-110vh) translateX(-10px) scale(1); opacity: 0; }
+        }
+
+        /* Container */
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 505px;
+            z-index: 2;
+        }
+
+        .contact-us h2 {
+            font-size: 2.5rem;
+            font-weight: bolder;
+            color:rgb(0, 0, 0);
+            margin-bottom: 30px;
+            font-family:var(--font-serif); font-style:bolder; font-size:1.7rem; text-shadow:1px 1px 4px #eddcc8;
+        }
+
+        .contact-container {
+            background: white;
+            padding: 40px 50px;
+            border-radius: 100px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+
+        .contact-container h1 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #000;
+            font-family:var(--font-serif); font-style:bolder; font-size:2.4rem; text-shadow:1px 1px 4px #eddcc8; 
+        }
+
+        .contact-container input,
+        .contact-container textarea {
+            width: 100%;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 80px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .contact-container input:focus,
+        .contact-container textarea:focus {
+            border-color: #000;
+        }
+
+        .contact-container textarea {
+            resize: none;
+            height: 110px;
+        }
+
+        .contact-container button {
+            margin-top: 20px;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            background-color: #000;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-container button:hover {
+            background-color: #eddcc8;
+            transform: scale(1.05);
+        }
+
+        .get-in-touch {
+            background: #fff;
+            padding: 20px 50px;
+            border-radius: 120px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+
+        .get-in-touch h2 {
+            
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 14px;
+            font-family:var(--font-serif); font-style:bolder; font-size:1.7rem; text-shadow:1px 1px 4px #eddcc8;
+        }
+
+        .get-in-touch p {
+            font-size: 1rem;
+            color: #333;
+            margin: 8px 0;
+            line-height: 1.6;
+            font-family:var(--font-serif); font-style:bolder; font-size:1.2rem; text-shadow:1px 1px 4px #eddcc8;
+        }
+
+        @media (max-width: 500px) {
+            .contact-container {
+                padding: 30px 20px;
+            }
+            .get-in-touch {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About US</a></li>
+      <li><a href="event.html">Event</a></li>
+            
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Bubbles -->
+    <div class="bubbles">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="contact-us">
+                <h2> --:  We'd Love To Hear From You  :-- </h2>
+            </div>
+            <hr>
+            <br>
+
+            <div class="contact-container">
+                <h1>Send Message</h1>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="tel" name="number" placeholder="Phone Number" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <div class="get-in-touch">
+                <h2>--: GET IN TOUCH :--</h2>
+                <p>Contact us, we are here to answer any questions you may have.</p>
+                <br>
+
+                <h2>--: ADDRESS :--</h2>
+                <p>No.1 University, Shoolini, Shoolini Road, Near 0 Point, India</p>
+                <br>
+
+                <h2>--: CONNECT :--</h2>
+                <p>vibecreaters@eventorganization.com</p>
+                <p>+91-7876-0001</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
